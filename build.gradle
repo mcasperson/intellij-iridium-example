@@ -1,0 +1,24 @@
+group 'iridium-jar'
+version '0.0.1-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/java', 'src/gherkin']
+        }
+    }
+}
+
+dependencies {
+    compileOnly group: 'com.matthewcasperson', name: 'iridium', version: '+'
+    compileOnly group: 'info.cukes', name: 'cucumber-jvm', version: '+'
+    compileOnly group: 'info.cukes', name: 'cucumber-java', version: '+'
+}
