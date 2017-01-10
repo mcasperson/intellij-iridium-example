@@ -9,14 +9,6 @@ repositories {
     mavenCentral()
 }
 
-sourceSets {
-    main {
-        java {
-            srcDirs = ['src/main/java', 'src/gherkin']
-        }
-    }
-}
-
 dependencies {
     testCompile group: 'com.matthewcasperson', name: 'iridium', version: '+'
     testCompile group: 'info.cukes', name: 'cucumber-jvm', version: '+'
