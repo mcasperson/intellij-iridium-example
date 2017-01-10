@@ -1,2 +1,5 @@
 .gradle
 .idea
+CucumberThread*
+log.txt
+MergedReport.xml
