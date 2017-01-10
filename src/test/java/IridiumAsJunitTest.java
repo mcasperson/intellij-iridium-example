@@ -4,6 +4,7 @@ import au.com.agic.apptesting.utils.impl.SystemPropertyUtilsImpl;
 
 import org.apache.commons.lang3.StringUtils;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -58,5 +59,6 @@ public class IridiumAsJunitTest {
 		System.setProperty("testSource", this.getClass().getResource("/test.feature").toString());
 		System.setProperty("testDestination", "PhantomJS");
 		final int failures = new TestRunner().run(globalTempFiles);
+		Assert.assertEquals(0, failures);
 	}
 }
