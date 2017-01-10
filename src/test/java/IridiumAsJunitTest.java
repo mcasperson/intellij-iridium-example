@@ -18,12 +18,20 @@ import java.util.List;
 public class IridiumAsJunitTest {
 	private final List<File> globalTempFiles = new ArrayList<File>();
 
+	/**
+		(Re)set a bunch of common system properties
+ 	*/
 	@Before
 	public void getBrowserList() {
 		/*
-			(Re)set a bunch of common system properties
+			When using Iridium from a Maven artifact, you don't get the drivers, so you
+			must set the path to the drivers yourself.
 		 */
 		System.setProperty("phantomjs.binary.path", "/Users/Shared/phantomjs-2.1.1-macosx/bin/phantomjs");
+		/*
+			Likewise you'll need to set paths for these drivers if you intend to test against
+			these browsers.
+		 */
 		System.setProperty("webdriver.chrome.driver", "");
 		System.setProperty("webdriver.opera.driver", "");
 		System.setProperty("webdriver.ie.driver", "");
